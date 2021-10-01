@@ -1,14 +1,20 @@
 # please run "pip install gitpython"
-# please configure your name down in "name"
-# make sure your git user and password are already configured in bash
+# run this only from root folder
 
 from datetime import datetime
 import os
 from git import Repo
 import sys
+import argparse
 
-name = sys.argv[1]
-mode = sys.argv[2]
+parser=argparse.ArgumentParser(description=''' Punch clock for R and D projects. ''')
+parser.add_argument('name', help='Your name')
+parser.add_argument('mode', help='"in" (for starting counter) or "out"(to push end commit)')
+args = parser.parse_args()
+
+name = args.name
+mode = args.mode
+print(name)
 
 now = datetime.now()
 myfolder = os.path.abspath(os.getcwd())
