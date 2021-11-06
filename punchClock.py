@@ -1,5 +1,6 @@
 # please run "pip install gitpython"
 # run this only from root folder
+# make sure git user is configured
 
 from datetime import datetime
 import os
@@ -7,18 +8,16 @@ from git import Repo
 import sys
 import argparse
 
-parser=argparse.ArgumentParser(description=''' Punch clock for R and D projects. ''')
+parser = argparse.ArgumentParser(description=''' Punch clock for R and D projects. ''')
 parser.add_argument('name', help='Your name')
 parser.add_argument('mode', help='"in" (for starting counter) or "out"(to push end commit)')
 args = parser.parse_args()
 
 name = args.name
 mode = args.mode
-print(name)
 
 now = datetime.now()
 myfolder = os.path.abspath(os.getcwd())
-
 
 current_time = now.strftime("%H:%M:%S")
 current_day = datetime.today().strftime('%Y-%m-%d')
