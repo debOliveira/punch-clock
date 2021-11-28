@@ -10,7 +10,7 @@ import argparse
 
 parser = argparse.ArgumentParser(description=''' Punch clock for R and D projects. ''')
 parser.add_argument('name', help='Your name')
-parser.add_argument('mode', help='"in" (for starting counter) or "out"(to push end commit)')
+parser.add_argument('mode', help='"in" (for starting counter) or "out" (to push end commit)')
 args = parser.parse_args()
 
 name = args.name
@@ -35,9 +35,9 @@ f.write(text)
 f.close()
 print(msg)
 
-PATH_OF_GIT_REPO = myfolder+'\.git'  # make sure .git folder is properly configured
+PATH_OF_GIT_REPO = myfolder+'/.git'  # make sure .git folder is properly configured
 repo = Repo(PATH_OF_GIT_REPO)
-repo.git.add(myfolder+'./punchClock/'+name+'.txt')
+repo.git.add('./punchClock/'+name+'.txt')
 repo.index.commit(msg)
 origin = repo.remote(name='origin')
 origin.push()
