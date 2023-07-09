@@ -35,14 +35,9 @@ def get_time() -> str:
     return f"{day}_{time}"
 
 
-def push_repo(repo: git.Repo, m: str) -> None:
-    try:
-        repo.git.add(A=True, update=True)
-        repo.index.commit(m=m)
-        origin = repo.remote(name="origin")
-        origin.push()
-    except:
-        raise Exception("!!! cannot push the repo !!!")
+def push_repo(repo: git.Repo, m: str, dir: str, name: str) -> None:
+    pass
+        
 
 
 def create_user(name: str, email: str, dir: str) -> None:
@@ -132,7 +127,7 @@ def punch(dir: str, punch_in: bool, punch_out: bool) -> None:
             exit(1)
 
     try:
-        push_repo(repo, f"punched {name}")
+        push_repo(repo, f"punched {name}", dir, name)
     except Exception as e:
         click.echo(e)
 
