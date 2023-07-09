@@ -3,8 +3,10 @@ import os
 from . import utils
 import click
 
+
 def get_repo() -> git.Repo:
     return git.Repo(".")
+
 
 def get_name(git_config: git.GitConfigParser) -> str:
     name = git_config.get_value("user", "name")
@@ -14,8 +16,10 @@ def get_name(git_config: git.GitConfigParser) -> str:
     name = name.lower()
     return name
 
+
 def get_email(git_config: git.GitConfigParser) -> str:
     return git_config.get_value("user", "email")
+
 
 def push_repo(repo: git.Repo, m: str, dir: str, name: str) -> None:
     filename = f"{dir}/{name}.md"
@@ -23,6 +27,7 @@ def push_repo(repo: git.Repo, m: str, dir: str, name: str) -> None:
     repo.index.commit(m)
     repo.remotes.origin.push()
     pass
+
 
 def entry_in(name: str, dir: str) -> None:
     try:
@@ -49,4 +54,3 @@ def entry_out(name: str, dir: str) -> None:
                 raise Exception("!!! already punched out !!!")
     except Exception as e:
         raise e
-        

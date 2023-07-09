@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "punch-clock"
-version = "0.1.0"
-description = "to track R and D students"
+version = "0.1.1"
+description = "to track working hours directly in git"
 authors = ["Debora Oliveira <deb.olibeira@protonmail.com>"]
 readme = "README.md"
 packages = [{include = "punch_clock"}]

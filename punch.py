@@ -3,7 +3,7 @@ import click
 
 
 @click.command()
-@click.option("--dir", default="punch", help="directory to store the log files", type=str)
+@click.option("--dir", default="punch_log", help="directory to store the log files", type=str)
 @click.option(
     "--punch_in",
     "-in",

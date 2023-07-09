@@ -1,6 +1,31 @@
-# punchClock
-![Status](https://img.shields.io/static/v1?style=flat&logo=github&label=status&message=finished&color=red) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)  [![GitHub forks](https://img.shields.io/github/forks/debOliveira/punchClock.svg?style=social&label=Fork&maxAge=2592000)](https://GitHub.com/debOliveira/punchClock/network/) [![GitHub stars](https://img.shields.io/github/stars/debOliveira/punchClock.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/debOliveira/punchClock/stargazers/) [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FdebOliveira%2FpunchClock&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+# :snake: punch clock
 
-This is a simple punch clock report generating py.
+ Python script to keep track of your working hours.
 
-I use to keep track of on going activities in R&D projects I mentor.
+## Requirements
+
+```bash
+pip install punch-clock
+git config --global user.name "Your Name"
+git config --global user.email "youremail@email.com"
+git config --global credential.helper store
+```
+
+
+
+## Usage
+
+```bash
+python3 punch.py -in
+```
+
+or 
+
+```bash
+python3 punch.py -out
+```
+
+## Example
+
+See [example](example.md) file.
+
