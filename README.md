@@ -5,7 +5,7 @@
 ## Requirements
 
 ```bash
-pip install punch-clock
+pip install punch-clock click
 git config --global user.name "Your Name"
 git config --global user.email "youremail@email.com"
 git config --global credential.helper store
@@ -25,7 +25,7 @@ or
 python3 punch.py -out
 ```
 
-## Example
+## Output
 
-See [example](example.md) file.
+See [example.md](/example/example.md) file.
 
