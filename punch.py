@@ -32,20 +32,16 @@ def punch(dir: str, punch_in: bool, punch_out: bool) -> None:
     email = punch_clock.get_email(repo.config_reader())
     punch_clock.create_user(name, email, dir)
 
-    if punch_in:
-        try:
+    try:
+        if punch_in:
             punch_clock.entry_in(name, dir)
             click.echo(f"pushed in at {punch_clock.get_time()} for {name}")
-        except Exception as e:
-            click.echo(e)
-            exit(1)
-    else:
-        try:
+        else:
             punch_clock.entry_out(name, dir)
             click.echo(f"pushed out at {punch_clock.get_time()} for {name}")
-        except Exception as e:
-            click.echo(e)
-            exit(1)
+    except Exception as e:
+        click.echo(e)
+        exit(1)
 
     try:
         punch_clock.push_repo(repo, f"punched {name}", dir, name)
